@@ -3,7 +3,6 @@ const { NUMBER } = require('sequelize');
 const User = require('../models/foruser');
 
 const ledBoard = require('../models/leaderboard');
-let option;
 
 exports.postAddUser =  async (req, res, next) =>{
   try{

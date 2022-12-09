@@ -11,19 +11,16 @@ const ledb = require('../models/leaderboard')
    const email = req.body.email;
    const password = req.body.password;
    
-function isvalidString()
-{
-  
-}
+
    if(!req.body.username || !req.body.email || !req.body.password){
      throw new Error("This field is  mandatory");
    }
-   const usernames = await Signup.findAll({where: {username:username}});
+   //const usernames = await Signup.findAll({where: {username:username}});
    const useremail = await Signup.findAll({where: {email:email}});
    
-   let length2 = usernames.length;
+   //let length2 = usernames.length;
    let length1 = useremail.length;
-   if(length1 > 0 || length2 > 0)
+   if(length1 > 0 )
    {
       
         res.status(200).json({message:"User already exist"})

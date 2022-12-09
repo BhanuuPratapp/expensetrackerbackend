@@ -69,7 +69,7 @@ filecontenturl.belongsTo(User);
 
 
 sequelize
-  .sync()
+  .sync({force:true})
   
   .then(() => {
    
