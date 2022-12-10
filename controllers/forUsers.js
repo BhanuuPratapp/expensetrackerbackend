@@ -69,7 +69,7 @@ const ledb = require('../models/leaderboard')
   }
 */
 function generateAccessToken(id){
-    return jwt.sign({userid: id},'1TAKM00j3x2MD5j0wFJSBzrJB0qnll')
+    return jwt.sign({userid: id},process.env.TOKEN_SECRET)
 }
 
     exports.postLogin = async(req, res, next) =>{
