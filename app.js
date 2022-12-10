@@ -22,8 +22,8 @@ const ledb=require("./models/leaderboard")
 const fgtpwd=require("./models/ForgotPasswordRequests")
 const filecontenturl = require('./models/filecontent')
 
-const privatekey = fs.readFileSync('server.key')
-const certificate = fs.readFileSync('server.cert')
+//const privatekey = fs.readFileSync('server.key')
+//const certificate = fs.readFileSync('server.cert')
 
 //const bodyParser = require('body-parser');
 
@@ -69,11 +69,12 @@ filecontenturl.belongsTo(User);
 
 
 sequelize
-  .sync({force:true})
+  .sync()
   
   .then(() => {
    
-    https.createServer({key:privatekey,cert:certificate},app).listen(process.env.HOST || 1000)
+   // https.createServer({key:privatekey,cert:certificate},app).listen(process.env.HOST || 1000)
+   app.listen(process.env.HOST || 1000)
   })
  
   .catch(err => {

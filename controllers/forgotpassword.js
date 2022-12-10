@@ -39,7 +39,7 @@ console.log(user)
         port: 587,
         auth: {
             user: 'pratapbhanuuu@gmail.com',
-            pass: 'dywbmwbvxhbscxhc',
+            pass: '',
             
         }
     })
